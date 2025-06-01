@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>💝 शुभकामना भेजक</title>
+  
+  <!-- Google AdSense Code - यहाँ अपना AdSense code paste करें -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5641271205652518"
+     crossorigin="anonymous"></script>
+  
   <style>
     * {
       margin: 0;
@@ -296,6 +301,16 @@
   <div class="floating-emojis" id="floatingEmojis"></div>
 
   <div class="container">
+    <!-- Top Banner Ad -->
+    <div class="ad-container" style="text-align: center; margin-bottom: 20px;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
+
     <div class="header">
       <div class="image-container">
         <img src="maraj.jpg" alt="छत्रपति शिवाजी महाराज" class="profile-image" id="profileImage">
@@ -327,6 +342,16 @@
         पेज URL शेयर करें:
       </label>
       <input type="text" id="pageShareURL" class="input-field" readonly>
+    </div>
+
+    <!-- Middle Banner Ad -->
+    <div class="ad-container" style="text-align: center; margin: 20px 0;">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
     </div>
 
     <div class="action-buttons">
@@ -451,6 +476,10 @@
     // Initialize
     populatePageURL();
     updateCharCounter();
+    
+    // Initialize AdSense Ads
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
 
     // Keyboard shortcut
     document.addEventListener('keydown', (e) => {
