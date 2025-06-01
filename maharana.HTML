@@ -79,11 +79,11 @@
     }
 
     .profile-image {
-      display: block; /* इमेज के नीचे अतिरिक्त स्पेस को हटाने में मदद करता है */
-      width: 100%;    /* इमेज को उसके पैरेंट कंटेनर (.image-container) की पूरी चौड़ाई लेने देगा */
-      height: auto;   /* इमेज के आस्पेक्ट रेशियो (पहलू अनुपात) को बनाए रखेगा */
-      max-width: 100%;/* यह सुनिश्चित करता है कि इमेज अपने कंटेनर से बाहर न जाए */
-      object-fit: cover; /* यह तब उपयोगी होता है जब .image-container की कोई निश्चित ऊंचाई हो या इमेज पर max-height सेट हो। height: auto के साथ, यह सुनिश्चित करेगा कि इमेज चौड़ाई के अनुसार ठीक से स्केल हो। */
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: cover;
       border-radius: 15px;
       transition: transform 0.3s ease;
       border: 4px solid rgba(255, 255, 255, 0.8);
@@ -111,32 +111,6 @@
       margin-bottom: 20px;
       font-style: italic;
       font-weight: 600;
-    }
-
-    .quick-templates {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-      justify-content: center;
-    }
-
-    .template-btn {
-      padding: 8px 14px;
-      background: linear-gradient(45deg, #8b4513, #cd853f);
-      color: white;
-      border: none;
-      border-radius: 15px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 10px rgba(139, 69, 19, 0.3);
-      font-weight: bold;
-    }
-
-    .template-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(139, 69, 19, 0.5);
     }
 
     .input-group {
@@ -178,15 +152,11 @@
 
     .input-field[readonly] {
       background-color: rgba(220, 220, 220, 0.7);
-      /* Slightly different background for readonly */
       cursor: text;
-      /* Allow text selection */
     }
-
 
     .textarea-field {
       height: 100px;
-      /* Adjusted height slightly */
       resize: vertical;
       font-family: inherit;
     }
@@ -229,7 +199,6 @@
     }
 
     .btn-copy-url {
-      /* Renamed class for clarity */
       background: linear-gradient(135deg, #8b4513, #cd853f);
       color: white;
       box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
@@ -308,31 +277,12 @@
         font-size: 20px;
       }
 
-      .profile-image {
-        /* ये लाइनें हटा दी गई हैं:
-        width: 180px;
-        height: 110px; */
-        /* अब मुख्य CSS से width: 100%; और height: auto; लागू होगा,
-           जिससे इमेज मोबाइल पर अपने कंटेनर के हिसाब से साइज़ लेगी।
-           आप चाहें तो अधिकतम ऊंचाई भी दे सकते हैं, जैसे:
-           max-height: 200px; */
-      }
-
       .action-buttons {
         flex-direction: column;
       }
 
       .btn {
         width: 100%;
-      }
-
-      .quick-templates {
-        gap: 5px;
-      }
-
-      .template-btn {
-        font-size: 11px;
-        padding: 6px 10px;
       }
 
       .textarea-field {
@@ -354,167 +304,160 @@
       <p class="subtitle">वीर शिवाजी के आदर्शों को अपनाएं ⚔️</p>
     </div>
 
-
-
     <div class="input-group">
       <label class="input-label">
-              <span class="emoji">👤</span>
-              आपका नाम:
-            </label>
+        <span class="emoji">👤</span>
+        आपका नाम:
+      </label>
       <input type="text" id="senderName" class="input-field" placeholder="अपना नाम यहाँ लिखें..." maxlength="50">
     </div>
 
     <div class="input-group">
       <label class="input-label">
-              <span class="emoji">💌</span>
-              आपकी शुभकामनाएं:
-            </label>
+        <span class="emoji">💌</span>
+        आपकी शुभकामनाएं:
+      </label>
       <textarea id="wishMessage" class="input-field textarea-field" placeholder="अपनी प्यारी शुभकामनाएं यहाँ लिखें..." maxlength="500">🚩 हर हर महादेव! 🙏🌟 छत्रपति शिवाजी महाराज के आदर्शों की तरह⚔️ आपका जीवन भी वीरता और न्याय से भरा हो!🏰 स्वराज्य की भावना आपके दिल में बनी रहे!💫 शिवरायांच्या मार्गावर चालत राहा!जय भवानी! जय शिवाजी! 🚩</textarea>
       <div class="char-counter" id="charCounter">0/500</div>
     </div>
 
     <div class="input-group">
       <label class="input-label" for="pageShareURL">
-              <span class="emoji">🔗</span>
-              पेज URL शेयर करें:
-            </label>
+        <span class="emoji">🔗</span>
+        पेज URL शेयर करें:
+      </label>
       <input type="text" id="pageShareURL" class="input-field" readonly>
     </div>
 
     <div class="action-buttons">
       <button class="btn btn-whatsapp" onclick="sendToWhatsApp()">
-              <span class="btn-icon">📱</span>
-              WhatsApp भेजें
-            </button>
-      <button class="btn btn-copy-url" onclick="copyPageURL()"> <span class="btn-icon">📋</span>
-              URL कॉपी करें </button>
+        <span class="btn-icon">📱</span>
+        WhatsApp भेजें
+      </button>
+      <button class="btn btn-copy-url" onclick="copyPageURL()">
+        <span class="btn-icon">📋</span>
+        URL कॉपी करें
+      </button>
     </div>
   </div>
+  
   <div class="toast" id="toast"></div>
+  
   <script>
-    // Load template
-        function loadTemplate(type) {
-            document.getElementById('wishMessage').value = templates[type];
-            updateCharCounter();
-            showToast(`${type} संदेश लोड हो गया! 📝`);
-            createFloatingEmojis();
-        }
+    // Update character counter
+    function updateCharCounter() {
+      const message = document.getElementById('wishMessage').value;
+      const counter = document.getElementById('charCounter');
+      counter.textContent = `${message.length}/500`;
 
-        // Update character counter
-        function updateCharCounter() {
-            const message = document.getElementById('wishMessage').value;
-            const counter = document.getElementById('charCounter');
-            counter.textContent = `${message.length}/500`;
+      if (message.length > 450) {
+        counter.style.color = '#dc143c';
+      } else if (message.length > 350) {
+        counter.style.color = '#ff8c00';
+      } else {
+        counter.style.color = '#666';
+      }
+    }
+    
+    // Populate Page URL field
+    function populatePageURL() {
+      const pageURLField = document.getElementById('pageShareURL');
+      if (pageURLField) {
+        pageURLField.value = window.location.href;
+      }
+    }
 
-            if (message.length > 450) {
-                counter.style.color = '#dc143c';
-            } else if (message.length > 350) {
-                counter.style.color = '#ff8c00';
-            } else {
-                counter.style.color = '#666';
+    // Send to WhatsApp
+    function sendToWhatsApp() {
+      const senderName = document.getElementById('senderName').value.trim();
+      const wishMessage = document.getElementById('wishMessage').value.trim();
+      const pageURL = document.getElementById('pageShareURL').value;
+
+      if (!wishMessage) {
+        showToast('कृपया अपनी शुभकामनाएं लिखें! 💌', 'error');
+        return;
+      }
+
+      let fullMessage = wishMessage;
+      if (senderName) {
+        fullMessage += `\n\n- ${senderName}`;
+      }
+      
+      fullMessage += `\n\nइस शुभकामना को यहाँ देखें:\n${pageURL}`;
+
+      const encodedMessage = encodeURIComponent(fullMessage);
+      const whatsappURL = `https://wa.me/?text=${encodedMessage}`;
+
+      window.open(whatsappURL, '_blank');
+      showToast('WhatsApp खुल रहा है! 📱');
+      createFloatingEmojis();
+    }
+
+    // Copy Page URL
+    function copyPageURL() {
+      const pageURLToCopy = document.getElementById('pageShareURL').value;
+
+      if (!pageURLToCopy) {
+        showToast('कोई URL नहीं है copy करने के लिए! 🔗', 'error');
+        return;
+      }
+
+      navigator.clipboard.writeText(pageURLToCopy).then(() => {
+        showToast('पेज URL कॉपी हो गया! 📋');
+        createFloatingEmojis();
+      }).catch(() => {
+        showToast('URL कॉपी नहीं हो सका! 😞', 'error');
+      });
+    }
+
+    // Show toast notification
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.style.background = type === 'error' ? '#dc143c' : '#25D366';
+      toast.classList.add('show');
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Create floating emojis
+    function createFloatingEmojis() {
+      const emojis = ['🚩', '⚔️', '🏰', '👑', '🙏', '✨', '💫', '🌟'];
+      const container = document.getElementById('floatingEmojis');
+
+      for (let i = 0; i < 6; i++) {
+        setTimeout(() => {
+          const emoji = document.createElement('div');
+          emoji.className = 'floating-emoji';
+          emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          emoji.style.left = Math.random() * 100 + '%';
+          emoji.style.animationDelay = Math.random() * 2 + 's';
+          container.appendChild(emoji);
+
+          setTimeout(() => {
+            if (emoji.parentNode) {
+              emoji.parentNode.removeChild(emoji);
             }
-        }
-        
-        // Populate Page URL field
-        function populatePageURL() {
-            const pageURLField = document.getElementById('pageShareURL');
-            if (pageURLField) {
-                pageURLField.value = window.location.href;
-            }
-        }
+          }, 6000);
+        }, i * 300);
+      }
+    }
 
-        // Send to WhatsApp
-        function sendToWhatsApp() {
-            const senderName = document.getElementById('senderName').value.trim();
-            const wishMessage = document.getElementById('wishMessage').value.trim();
-            const pageURL = document.getElementById('pageShareURL').value; // Get the page URL
+    // Event listener
+    document.getElementById('wishMessage').addEventListener('input', updateCharCounter);
 
-            if (!wishMessage) {
-                showToast('कृपया अपनी शुभकामनाएं लिखें! 💌', 'error');
-                return;
-            }
+    // Initialize
+    populatePageURL();
+    updateCharCounter();
 
-            let fullMessage = wishMessage;
-            if (senderName) {
-                fullMessage += `\n\n- ${senderName}`;
-            }
-            
-            fullMessage += `\n\nइस शुभकामना को यहाँ देखें:\n${pageURL}`; // Append the page URL
-
-            const encodedMessage = encodeURIComponent(fullMessage);
-            const whatsappURL = `https://wa.me/?text=${encodedMessage}`;
-
-            window.open(whatsappURL, '_blank');
-            showToast('WhatsApp खुल रहा है! 📱');
-            createFloatingEmojis();
-        }
-
-        // Copy Page URL (replaces old copyMessage)
-        function copyPageURL() {
-            const pageURLToCopy = document.getElementById('pageShareURL').value;
-
-            if (!pageURLToCopy) {
-                showToast('कोई URL नहीं है copy करने के लिए! 🔗', 'error');
-                return;
-            }
-
-            navigator.clipboard.writeText(pageURLToCopy).then(() => {
-                showToast('पेज URL कॉपी हो गया! 📋');
-                createFloatingEmojis();
-            }).catch(() => {
-                showToast('URL कॉपी नहीं हो सका! 😞', 'error');
-            });
-        }
-
-        // Show toast notification
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.style.background = type === 'error' ? '#dc143c' : '#25D366';
-            toast.classList.add('show');
-
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // Create floating emojis
-        function createFloatingEmojis() {
-            const emojis = ['🚩', '⚔️', '🏰', '👑', '🙏', '✨', '💫', '🌟'];
-            const container = document.getElementById('floatingEmojis');
-
-            for (let i = 0; i < 6; i++) {
-                setTimeout(() => {
-                    const emoji = document.createElement('div');
-                    emoji.className = 'floating-emoji';
-                    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-                    emoji.style.left = Math.random() * 100 + '%';
-                    emoji.style.animationDelay = Math.random() * 2 + 's';
-                    container.appendChild(emoji);
-
-                    setTimeout(() => {
-                        if (emoji.parentNode) {
-                            emoji.parentNode.removeChild(emoji);
-                        }
-                    }, 6000);
-                }, i * 300);
-            }
-        }
-
-        // Event listeners
-        document.getElementById('wishMessage').addEventListener('input', updateCharCounter);
-
-        // Initialize
-        populatePageURL(); // Call this on load to fill the URL field
-        updateCharCounter();
-
-
-        // Add keyboard shortcut
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'Enter') {
-                sendToWhatsApp();
-            }
-        });
+    // Keyboard shortcut
+    document.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'Enter') {
+        sendToWhatsApp();
+      }
+    });
   </script>
 </body>
 
