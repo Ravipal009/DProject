@@ -271,6 +271,36 @@
       }
     }
 
+    /* Footer Links Styling */
+    .footer-links {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(139, 69, 19, 0.3);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: #333;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(139, 69, 19, 0.3);
+    }
+
+    .footer-link:hover {
+      background: rgba(139, 69, 19, 0.8);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+    }
+
     @media (max-width: 480px) {
       .container {
         padding: 20px;
@@ -292,6 +322,15 @@
 
       .textarea-field {
         height: 90px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-link {
+        text-align: center;
       }
     }
   </style>
@@ -363,6 +402,16 @@
         <span class="btn-icon">📋</span>
         URL कॉपी करें
       </button>
+    </div>
+
+    <!-- Footer Links Section -->
+    <div class="footer-links">
+      <a href="privacy-policy.html" class="footer-link" target="_blank">
+        🔒 गोपनीयता नीति
+      </a>
+      <a href="terms-conditions.html" class="footer-link" target="_blank">
+        📋 नियम व शर्तें
+      </a>
     </div>
   </div>
   
